@@ -23,7 +23,7 @@ class ProductAdmin(admin.ModelAdmin):
 class PriceEntryAdmin(admin.ModelAdmin):
     list_display = ('product', 'store', 'price', 'date_reported', 'reported_by', 'created_at', 'updated_at')
     search_fields = ('product__name', 'store__name', 'price')
-    list_filter = ('date_reported', 'store', 'product')
+    list_filter = ('store', 'product','date_reported')
     ordering = ('-date_reported', 'store', 'product')
 
 class UserPointsListFiler(admin.SimpleListFilter):
